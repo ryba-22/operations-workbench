@@ -27,6 +27,7 @@ jobs:
       - run: |
           mkdir -p site
           cp index.html site/index.html
+          cp favicon.svg site/favicon.svg
           cp -R src site/src
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
