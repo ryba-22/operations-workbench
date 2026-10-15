@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="theme-color" content="#10282b"/>
+<meta name="description" content="Independent product engineering portfolio demo: operational scheduling and conflict validation."/>
+<title>Operations Workbench — Synthetic Scheduling Demo</title>
+<link rel="stylesheet" href="./src/styles.css"/>
+<script type="module" src="./src/app.mjs"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="masthead">
+      <a class="wordmark" href="./" aria-label="Operations Workbench — strona główna"><span class="mark">◩</span><span>FIELDWORK<span class="wordmark-accent"> / operations</span></span></a>
+      <span class="mast-meta">DEMO / 2026.10 <span class="sep">·</span> SYNTETYCZNE DANE</span>
+    </header>
+    <main>
+      <div class="eyebrow">STUDIO / WORKFLOW 01 <span>—</span> SYSTEM PLANOWANIA</div>
+      <section class="intro">
+        <div><h1>Plan tygodnia<span class="punct">.</span></h1><p>Jedno miejsce do sprawdzenia kolizji sal i prowadzących. Zmień rezerwację, a system zweryfikuje reguły przed zapisem.</p></div>
+        <div class="intro-note"><div>TYDZIEŃ OPERACYJNY</div><strong>19 — 23 października</strong><span>Wersja demonstracyjna · bez danych klientów</span></div>
+      </section>
+      <section class="metrics" aria-label="Podsumowanie">
+        <div><span class="metric-label">SESJE NIEODWOŁANE</span><strong id="scheduledCount">—</strong></div>
+        <div><span class="metric-label">ZREALIZOWANE</span><strong id="completedCount">—</strong></div>
+        <div><span class="metric-label">SESJE W KONFLIKCIE</span><strong id="conflictCount">—</strong></div>
+      </section>
+      <section class="workarea" aria-labelledby="tableTitle">
+        <div class="work-head"><div><div class="eyebrow small">01 / HARMONOGRAM</div><h2 id="tableTitle">Wszystkie sesje</h2></div><button id="resetDemo" class="reset" type="button">↺ Przywróć demo</button></div>
+        <div class="controls">
+          <label>Data <select id="dayFilter"><option value="all">Cały tydzień</option><option value="2026-10-19">Pon, 19.10</option><option value="2026-10-20">Wt, 20.10</option><option value="2026-10-21">Śr, 21.10</option><option value="2026-10-22">Czw, 22.10</option><option value="2026-10-23">Pt, 23.10</option></select></label>
+          <label class="search-label">Szukaj <input id="search" type="search" placeholder="Zajęcia, prowadzący, sala..." autocomplete="off"/></label>
+          <span class="count" id="rowCount"></span>
+        </div>
+        <div class="notice" role="status"><span class="notice-icon">◎</span><span id="issueCount"></span></div>
+        <p class="scroll-hint">Przesuń tabelę w bok, aby zobaczyć wszystkie kolumny →</p><div class="table-scroll"><table><thead><tr><th>Data</th><th>Godziny</th><th>Sesja</th><th>Prowadzący</th><th>Sala</th><th>Status</th><th>Kontrola</th><th aria-label="Działania"></th></tr></thead><tbody id="sessionRows"></tbody></table></div>
+        <p id="empty" hidden>Brak sesji spełniających kryteria.</p>
+        <p id="feedback" role="status" class="feedback"></p>
+      </section>
+      <footer><span>FIELDWORK / PRODUCT ENGINEERING DEMO</span><span>Reguły ↔ Interfejs ↔ Testy</span></footer>
+    </main>
+  </div>
+  <dialog id="editDialog" aria-labelledby="editTitle"><form id="editForm" method="dialog"><div class="dialog-top"><span class="eyebrow small">EDYCJA REZERWACJI</span><button id="closeEdit" type="button" class="x" aria-label="Zamknij dialog">×</button></div><h2 id="editTitle"></h2><p id="editMeta"></p><label class="field">Sala <select id="roomEdit" required></select></label><label class="field">Status <select id="statusEdit"><option value="planned">Zaplanowane</option><option value="completed">Odbyte</option><option value="cancelled">Odwołane</option></select></label><p class="validation" id="editError" role="alert" hidden></p><div class="dialog-actions"><button class="save" type="submit">Sprawdź i zapisz</button><span>Zmiana lokalna · tylko demo</span></div></form></dialog>
+</body>
+</html>
