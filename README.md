@@ -1,8 +1,8 @@
 # Operations Workbench
 
-**An interactive, deliberately small operational UI that prevents room and facilitator conflicts before accepting a change.**
+[![Tests](https://github.com/ryba-22/operations-workbench/actions/workflows/ci.yml/badge.svg)](https://github.com/ryba-22/operations-workbench/actions/workflows/ci.yml)
 
-[![CI](https://img.shields.io/badge/tests-node%20built--in-lightgrey)](#run-locally)
+**An interactive, deliberately small operational UI that prevents room and facilitator conflicts before accepting a change.**
 
 Everything is fictional. The sample has ten workshops, one intentional room collision and a dialog for moving or cancelling a session. The table is compact; there is no permanent inspector side panel. The rules live in a pure, separately tested module.
 
