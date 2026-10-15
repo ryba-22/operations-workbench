@@ -2,11 +2,19 @@
 
 [![Tests](https://github.com/ryba-22/operations-workbench/actions/workflows/ci.yml/badge.svg)](https://github.com/ryba-22/operations-workbench/actions/workflows/ci.yml)
 
+**[View the live interactive demo](https://ryba-22.github.io/operations-workbench/)**
+
 **An interactive, deliberately small operational UI that prevents room and facilitator conflicts before accepting a change.**
 
 Everything is fictional. The sample has ten workshops, one intentional room collision and a dialog for moving or cancelling a session. The table is compact; there is no permanent inspector side panel. The rules live in a pure, separately tested module.
 
 ![Desktop preview](docs/screenshot-desktop.png)
+
+<details><summary>Mobile preview</summary>
+
+<img src="docs/screenshot-mobile.png" width="390" alt="Operations Workbench mobile layout"/>
+
+</details>
 
 ## Run locally
 
