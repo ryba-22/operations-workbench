@@ -12,6 +12,8 @@ concurrency:
   cancel-in-progress: false
 jobs:
   deploy:
+    # Never expose a private staging repository through a Pages site.
+    if: ${{ !github.event.repository.private }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

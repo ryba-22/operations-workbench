@@ -50,6 +50,6 @@ Node 20+ is used **only for tests**; no dependencies, bundler, backend, accounts
 
 ## Deploy
 
-GitHub Pages can serve this static repository after choosing **GitHub Actions** as the Pages build source. A workflow is included; it runs unit tests before publishing only `index.html` and `src/` to Pages. Verify functionality on the published URL; local tests do not guarantee production health.
+GitHub Pages can serve the **public** version of this static repository after choosing **GitHub Actions** as the Pages build source. The deploy job is deliberately skipped while this repository is private. A workflow is included; it runs unit tests before publishing only `index.html` and `src/` to Pages. Verify functionality on the published URL; local tests do not guarantee production health.
 
 This is a **portfolio demo, not operational scheduling software**. No authentication, persistent storage, timezone/recurrence handling, optimistic concurrency, accessibility audit, or end-to-end browser test suite is claimed. A production scheduler would need them.
